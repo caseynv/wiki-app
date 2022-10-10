@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2f6dcf;
+  --white: #f7f9fc;
+  --black: #202733;
+  --gray: #353554;
+  --white2: #f2f2f2;
+  --yellow: #eaa221;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
+}
+
+input::placeholder{
+  padding-left: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sys_primary {
+  color: var(--primary);
+}
+
+.sys_bg_primary {
+  background-color: var(--primary);
+}
+
+.sys_bg_yellow {
+  background-color: var(--yellow);
+}
+
+.sys_border_primary {
+  border-color: var(--primary);
+}
+
+.sys_black {
+  color: var(--black);
+}
+
+.sys_bg_black {
+  background-color: var(--black);
+}
+
+.sys_gray {
+  color: var(--gray);
+}
+
+.sys_bg_gray {
+  background-color: var(--gray);
+}
+
+.sys_white {
+  color: var(--white);
+}
+
+.sys_white2 {
+  color: var(--white2);
+}
+
+.sys_bg_white {
+  background-color: var(--white);
+}
+
+.sys_bg_white2 {
+  background-color: var(--white2);
+}
+
+.stroke_button {
+  box-shadow: inset -2px 0 0 var(--primary), inset 0 -2px 0 var(--primary), inset 2px 0 0 var(--primary),
+    inset 0 2px 0 var(--primary);
+}
+
+.button_hoverlay {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-clip-path: circle(10% at -10% -10%);
+  clip-path: circle(10% at -10% -10%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.button {
+  &:hover {
+    .button_hoverlay {
+      -webkit-clip-path: circle(200% at 0% 0%);
+      clip-path: circle(200% at 0% 0%);
+    }
+  }
+}
+
+button {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.hide_scroll_nav {
+  transform: translateY(-100%);
+  max-width: 1620px;
+}
+
+.show_scroll_nav {
+  transform: translateY(0);
+  max-width: 1620px;
+}
+
+
+.step {
+  .inactive {
+    opacity: 0.3;
+  }
+
+  .active {
+    p {
+      color: var(--primary);
+    }
+
+    .bar {
+      background-color: var(--primary);
+    }
+  }
+
+  .done {
+    .bar {
+      background-color: #4bb543;
+    }
+
+    p {
+      color: #4bb543;
+    }
+  }
+}
+
+
+@media (min-width: 1700px) {
+  .App {
+    max-width: 1620px;
+    margin: 0 auto;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+//@media (max-width: 768px) {}
